@@ -1,0 +1,140 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #f4a261;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
+
+nav.menu-desplegable {
+    background-color: #2a9d8f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+nav.menu-desplegable .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2a9d8f;
+    width: 100%;
+    list-style: none;
+}
+
+nav.menu-desplegable:hover .submenu {
+    display: block;
+}
+
+nav.menu-desplegable .submenu li {
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+aside.baner {
+    background-color: #7209b7;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+aside.sliders {
+    background-color: #52b788;
+    color: white;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 auto;
+}
+
+span.slider {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #3a7a5b;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+span.slider:hover {
+    transform: scale(1.1);
+}
+
+span.slider:hover::after {
+    content: attr(data-info);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #264653;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+article.imagenes-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    align-items: center;
+}
+
+figure.imagen-desplegable {
+    position: relative;
+    margin: 0 10px;
+}
+
+figure.imagen-desplegable img {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+figure.imagen-desplegable:hover img {
+    transform: scale(1.5);
+}
+
+footer {
+    background-color: #f4a261;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
