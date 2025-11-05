@@ -78,6 +78,7 @@ aside.sliders {
     flex-direction: column;
     padding: 10px;
     flex: 0 0 auto;
+    gap: 15px; /* Aumenta el espacio entre sliders */
 }
 
 span.slider {
@@ -86,23 +87,28 @@ span.slider {
     background-color: #3a7a5b;
     cursor: pointer;
     transition: transform 0.3s;
+    position: relative; /* Para controlar el tooltip */
+    display: block; /* Asegura que cada slider ocupe su propia línea */
 }
 
 span.slider:hover {
     transform: scale(1.1);
+    z-index: 1; /* Eleva el elemento al hacer hover para evitar solapamientos */
 }
 
 span.slider:hover::after {
     content: attr(data-info);
     position: absolute;
-    top: -30px;
+    top: -40px; /* Ajusta hacia arriba para dar más espacio */
     left: 50%;
     transform: translateX(-50%);
     background-color: #264653;
     color: white;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 3px;
     font-size: 14px;
+    white-space: nowrap; /* Evita que el texto se rompa */
+    z-index: 2; /* Asegura que el tooltip esté encima */
 }
 
 article.imagenes-container {
